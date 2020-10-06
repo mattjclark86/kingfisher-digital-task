@@ -7,6 +7,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+button {
+  width: 30%;
+  height: 75px;
+  font-size: 40px;
+}
+
 .App {
   text-align: center;
 }
@@ -24,4 +30,26 @@ body {
 
 .App-link {
   color: #dd0fbb;
+}
+
+.button {
+  display: block;
+  background-color: rgb(224, 224, 224);
+}
+
+.calcLayout {
+  max-width: 400px;
+  margin: auto;
+}
+
+.result {
+  height: 70px;
+  background-color: rgb(224, 224, 224);
+  width: 100%;
+}
+
+.result p {
+  font-size: 30px;
+  margin: 7px;
+
 }
