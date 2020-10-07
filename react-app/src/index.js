@@ -11,19 +11,17 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div className="App">
+        <div>
           <header className="App-header">
-          <p>
-            Welcome to the incomplete app!
-          </p>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/calculator">Calculator</Link>
-              </li>
-            </ul>
+            <p>
+              Kingfisher Digital - Technical Demonstration Task
+            </p>
+          <header className="homeMenu">
+          <Link to="/" className="menuLink">Home - Hyperlinks</Link> 
+          </header>
+          <header className="homeMenu">
+          <Link to="/calculator" className="menuLink">Calculator</Link>
+          </header>
             <Switch>
               <Route exact path="/">
                 <Home />
@@ -42,24 +40,30 @@ class App extends Component {
 class Home extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <a
-            className="App-link"
-            href="https://www.linkedin.com/in/matthew-clark-15284517b/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Matthew's LinkedIn
-          </a>
-          <a
-            className="App-link"
-            href="http://www.semantic-web-journal.net/system/files/swj2493.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Matthew's Technical Resource
-          </a>
+      <div>
+        <header className="App-body">
+          <ul>
+            <li>
+              <a
+                className="App-link"
+                href="https://www.linkedin.com/in/matthew-clark-15284517b/"
+                target="_blank"
+                rel="author external noopener noreferrer"
+              >
+                Matthew's LinkedIn
+              </a>
+            </li>
+            <li>
+              <a
+                className="App-link"
+                href="http://www.semantic-web-journal.net/system/files/swj2493.pdf"
+                target="_blank"
+                rel="external noopener noreferrer"
+              >
+                Matthew's Technical Resource
+              </a>
+            </li>
+          </ul>
         </header>
       </div>
     );
@@ -144,7 +148,9 @@ class Calculator extends Component {
 
 ReactDOM.render(
   <React.StrictMode>
-    <App/>
+    <div className="grid2">
+      <App/>
+    </div>
   </React.StrictMode>,
   document.getElementById('root')
 );
