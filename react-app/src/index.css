@@ -38,7 +38,7 @@ button {
 }
 
 .calcLayout {
-  max-width: 400px;
+  max-width: 600px;
   margin: auto;
 }
 
@@ -46,10 +46,6 @@ button {
   height: 70px;
   background-color: rgb(224, 224, 224);
   width: 100%;
-}
-
-.result p {
-  font-size: 30px;
-  margin: 7px;
-
+  color: #282c34;
+  font-size: 40px;
 }

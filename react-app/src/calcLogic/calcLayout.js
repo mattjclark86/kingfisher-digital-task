@@ -14,14 +14,15 @@ class calcLayout extends Component {
                 <button name="6" onClick={e => this.props.onClick(e.target.name)}>6</button>
                 <button name="7" onClick={e => this.props.onClick(e.target.name)}>7</button>
                 <button name="8" onClick={e => this.props.onClick(e.target.name)}>8</button>
-                <button name="9" onClick={e => this.props.onClick(e.target.name)}>9</button><br/>
-
+                <button name="9" onClick={e => this.props.onClick(e.target.name)}>9</button>
+                <br/>
                 <button name="+" onClick={e => this.props.onClick(e.target.name)}>+</button>
                 <button name="-" onClick={e => this.props.onClick(e.target.name)}>-</button>
                 <button name="/" onClick={e => this.props.onClick(e.target.name)}>/</button>
-                <button name="*" onClick={e => this.props.onClick(e.target.name)}>*</button>
+                <button name="*" onClick={e => this.props.onClick(e.target.name)}>x</button>
                 <button name="=" onClick={e => this.props.onClick(e.target.name)}>=</button>
                 <button name="C" onClick={e => this.props.onClick(e.target.name)}>C</button>
+                <button name="DEL" onClick={e => this.props.onClick(e.target.name)}>DEL</button>
             </div>
         )
     }

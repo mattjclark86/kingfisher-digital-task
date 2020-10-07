@@ -4,8 +4,8 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import calcLayout from "./calcLayout.js";
-import calcOutput from "./calcOutput.js";
+import CalcLayout from "./calcLogic/calcLayout.js";
+import CalcOutput from "./calcLogic/calcOutput.js";
 
 class App extends Component {
   render() {
@@ -66,6 +66,8 @@ class Home extends Component {
   }
 }
 
+var autoReset = '0';
+
 class Calculator extends Component {
   constructor(){
     super();
@@ -76,40 +78,67 @@ class Calculator extends Component {
 
   calcFunc = () => {
     try {
+      autoReset = '1'
       this.setState({
         result: (eval(this.state.result) || "") + ""
       })
     } catch(e){
       this.setState({
-        result: "ERROR"
+        result: "ERROR - INVALID INPUT"
       })
     }
   };
 
+  delFunc = () => {
+    this.setState({
+      result: this.state.result.slice(0, -1)
+    })
+  };
+
   resetFunc = () => {
+    autoReset = '0'
     this.setState({
       result: ""
     })
   };
 
   onClick = button => {
+
     if(button === "="){
       this.calcFunc()
     }
 
-    if(button === "C"){
+    else if(button === "DEL"){
+      this.delFunc()
+    }
+
+    else if(button === "C"){
       this.resetFunc()
     }
-  }
+
+    else {
+      if(autoReset == '1'){
+        autoReset = '0'
+        this.setState({
+          result: this.state.result = button
+        })
+      } 
+      else {
+        this.setState({
+          result: this.state.result + button
+        })
+      }
+    }  
+  };
 
   render() {
     return (
       <div className="calcLayout">
         <h1>Calculator Program</h1>
-        <calcOutput result={this.state.result}/>
-        <calcLayout onClick={this.onClick}/>
+        <CalcOutput result={this.state.result}/>
+        <CalcLayout onClick={this.onClick}/>
       </div>
-      )
+      );
   }
 }
 
