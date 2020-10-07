@@ -10,3 +10,9 @@ Primary modules used in this project:
 - React-router-dom
 
 The command "npx create-react-app" was used to create a default react app which was then adapted into this current iteration of the project.
+
+To run:
+
+- cd into react-app folder
+- Install necessary modules
+- Run "npm start"
