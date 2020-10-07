@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  width: 20%;
+  height: 8vh;
+  font-size: 100%;
+}
+
+.App-body {
+  text-align: center;
+  background-color: #282c34;
+  min-width: 100%;
+  min-height: 70vh;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  justify-content: center;
+  font-size: calc(5px + 3vmin);
+  color: white;
+}
+
+.App-header {
+  float: left;
+  text-align: center;
+  background-color: #282c34;
+  min-width: 100%;
+  min-height: 30vh;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(5px + 2vmin);
+  color: white;
+  font-weight: bold;
+}
+
+.App-link {
+  color: cyan;
+}
+
+.button {
+  display: block;
+  background-color: rgb(224, 224, 224);
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.calcLayout {
+  margin: auto;
+  min-width: 20%;
+  min-height: 70vh;
+  font-size: calc(5px + 2vmin);
+}
+
+.grid {
+  margin: auto;
+  display: flex;
+  flex-wrap: nowrap;
+  border-style: ridge;
+  min-width: 20vw;
+  min-height: 34vh
+}
+
+.grid2 {
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: #282c34;
+}
+
+.homeMenu {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  color: white;
+}
+
+.menuLink {
+  color: white;
+}
+
+.result {
+  background-color: rgb(224, 224, 224);
+  min-width: auto;
+  min-height: 10vh;
+  color: #282c34;
+  font-size: calc(5px + 2vmin);
+  border-style: ridge;
+}
