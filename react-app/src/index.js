@@ -1,5 +1,4 @@
-import React from 'react';
-import {Component} from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
 import './index.css';
@@ -7,8 +6,10 @@ import CalcLayout from "./calcLogic/calcLayout.js";
 import CalcOutput from "./calcLogic/calcOutput.js";
 
 class App extends Component {
+//React class for the static menu portion of the app
   render() {
     return (
+      //BrowserRouter allows for the separation of the homepage and calculator pages
       <BrowserRouter>
         <div>
           <header className="App-header">
@@ -37,6 +38,7 @@ class App extends Component {
 }
 
 class Home extends Component {
+//React class for the homepage portion of the app where the LinkedIn and technical resource hyperlinks are contained
   render() {
     return (
       <div>
@@ -70,12 +72,15 @@ class Home extends Component {
 }
 
 var autoReset = '0';
+//Used for resetting the result once a calculation has occured
+//This prevents a logic error in being able to directly add numbers on the end a result rather than starting a new calculation
 
 class Calculator extends Component {
   constructor(){
     super();
     this.state = {
       result: ""
+      //Contains the result variable inside the class
     }
   }
 
@@ -84,10 +89,13 @@ class Calculator extends Component {
       autoReset = '1'
       this.setState({
         result: (eval(this.state.result) || "") + ""
+        //Calculates the result of the given formula or defaults to ""
       })
     } catch(e){
       this.setState({
         result: "ERROR - INVALID INPUT"
+        //Any syntax errors the user makes using the calculator are caught as errors
+        //E.G: +-+3
       })
     }
   };
@@ -95,6 +103,7 @@ class Calculator extends Component {
   delFunc = () => {
     this.setState({
       result: this.state.result.slice(0, -1)
+      //Subtracts a value from the current formula
     })
   };
 
@@ -102,6 +111,7 @@ class Calculator extends Component {
     autoReset = '0'
     this.setState({
       result: ""
+      //Resets the formula back to ""
     })
   };
 
@@ -109,14 +119,17 @@ class Calculator extends Component {
 
     if(button === "="){
       this.calcFunc()
+      //Calculates the current formula if "=" is pressed
     }
 
     else if(button === "DEL"){
       this.delFunc()
+      //Deleted the last value of the current formula if "DEL" is pressed
     }
 
     else if(button === "C"){
       this.resetFunc()
+      //Resets the formula if "C" (for Clear) is pressed
     }
 
     else {
@@ -124,11 +137,13 @@ class Calculator extends Component {
         autoReset = '0'
         this.setState({
           result: this.state.result = button
+          //A second way of resetting the formula
         })
       } 
       else {
         this.setState({
           result: this.state.result + button
+          //Adds the given number/operation to the formula
         })
       }
     }  
@@ -136,6 +151,7 @@ class Calculator extends Component {
 
   render() {
     return (
+      //Compressed code for the calculator layout and result screen
       <div className="calcLayout">
         <h1>Calculator Program</h1>
         <CalcOutput result={this.state.result}/>
@@ -146,6 +162,7 @@ class Calculator extends Component {
 }
 
 ReactDOM.render(
+  //Renders the app
   <React.StrictMode>
     <div className="grid2">
       <App/>

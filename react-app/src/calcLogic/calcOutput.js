@@ -1,7 +1,7 @@
-import React from 'react';
-import {Component} from 'react';
+import React, {Component} from 'react';
 
 class calcOutput extends Component {
+    //Results screen and results logic
     render() {
         let {result} = this.props;
         return( 

@@ -1,7 +1,7 @@
-import React from 'react';
-import {Component} from 'react';
+import React, {Component} from 'react';
 
 class calcLayout extends Component {
+    //Layout for all the buttons for the calculator
     render() {
         return (
             <div className = "grid">
